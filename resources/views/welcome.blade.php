@@ -1,10 +1,32 @@
-
+  
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tutorial Membuat Pagination Pada Laravel - www.malasngoding.com</title>
+@include('home')
+@include('header')
+@include('menu')
+@include('banner')
+
+<head>
+
+        <meta charset="UTF-8">
+        <title>Log in Administrator Page</title>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <!-- bootstrap 3.0.2 -->
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- font Awesome -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+        <!-- Theme style -->
+        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
+
+
+    <title>Tutorial Membuat Pagination Pada Laravel</title>
 </head>
 <body>
+<nav id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
 
     <style type="text/css">
         .pagination li{
@@ -14,8 +36,8 @@
         }
     </style>
 
-    <h2><a href="#">TEST</a></h2>
-    <h3>Data Pegawai</h3>
+    <h2></h2>
+    <h3>Data Barang</h3>
 
 
     <table border="1">
@@ -43,6 +65,10 @@
 
     {{ $pegawai->links() }}
 
-
+</div>
+</div>
+</div>
+</nav>
+@include('footer')
 </body>
 </html>
