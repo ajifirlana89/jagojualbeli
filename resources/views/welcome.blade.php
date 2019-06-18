@@ -2,28 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 @include('home')
 @include('header')
 @include('menu')
 @include('banner')
 
-<head>
 
-        <meta charset="UTF-8">
-        <title>Log in Administrator Page</title>
-        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <!-- bootstrap 3.0.2 -->
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <!-- font Awesome -->
-        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
-        <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
-
-    <title>Tutorial Membuat Pagination Pada Laravel</title>
-</head>
 <body>
-<nav id="top">
     <div class="container">
       <div class="row">
         <div class="col-xs-6">
@@ -42,33 +28,36 @@
 
     <table border="1">
         <tr>
-            <th>Nama</th>
-            <th>Jabatan</th>
-            <th>Umur</th>
-            <th>Alamat</th>
+            <th>Nama Produk</th>
+            <th>Deskripsi</th>
+            <th>price</th>
+            <th>Stok</th>
         </tr>
-        @foreach($pegawai as $p)
+        @foreach($products as $p)
+        <div class="col-xs-6">
         <tr>
-            <td>{{ $p->pegawai_nama }}</td>
-            <td>{{ $p->pegawai_jabatan }}</td>
-            <td>{{ $p->pegawai_umur }}</td>
-            <td>{{ $p->pegawai_alamat }}</td>
+
+            <td>{{ $p->nama }}</td>
+            <td>{{ $p->description }}</td>
+            <td><b>Rp.</b>{{ $p->price }}</td>
+            <td>{{ $p->stock }}</td>
+            <td><img src="../uploads/{{$p->image}}" ></td>
         </tr>
+        </div>
         @endforeach
     </table>
 
     <br/>
-    Halaman : {{ $pegawai->currentPage() }} <br/>
-    Jumlah Data : {{ $pegawai->total() }} <br/>
-    Data Per Halaman : {{ $pegawai->perPage() }} <br/>
+    Halaman : {{ $products->currentPage() }} <br/>
+    Jumlah Data : {{ $products->total() }} <br/>
+    Data Per Halaman : {{ $products->perPage() }} <br/>
 
 
-    {{ $pegawai->links() }}
+    {{ $products->links() }}
 
 </div>
 </div>
 </div>
-</nav>
 @include('footer')
 </body>
 </html>

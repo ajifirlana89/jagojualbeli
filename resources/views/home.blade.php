@@ -42,13 +42,14 @@
         <div class="col-xs-6">
           
 
-          
+
         </div>
         <div class="col-xs-6">
           <ul class="top-link">
           
-            <li><span class="glyphicon glyphicon-user">LOGIN</span></li>
-            <li><span class="glyphicon glyphicon-user">DAFTAR</span></li>
+            <li><a href="{{url('login')}}">Login</span></a></li>
+            <li><a href="{{url('register')}}">Register</a></li>
+            <li><a href="{{url('login')}}">logout</a></li>
           </ul>
           
         </div>

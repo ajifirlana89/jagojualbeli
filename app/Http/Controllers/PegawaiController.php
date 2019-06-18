@@ -11,10 +11,10 @@ class PegawaiController extends Controller
 	public function index()
 	{
     	        // mengambil data dari table pegawai
-		$pegawai = DB::table('pegawai')->paginate(10);
+		$products = DB::table('products')->paginate(10);
 
     	        // mengirim data pegawai ke view index
-		return view('welcome',['pegawai' => $pegawai]);
+		return view('welcome',['products' => $products]);
 
 	}
 
