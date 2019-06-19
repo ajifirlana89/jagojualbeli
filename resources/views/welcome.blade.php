@@ -26,26 +26,21 @@
     <h3>Data Barang</h3>
 
 
-    <table border="1">
-        <tr>
-            <th>Nama Produk</th>
-            <th>Deskripsi</th>
-            <th>price</th>
-            <th>Stok</th>
-        </tr>
+    
         @foreach($products as $p)
-        <div class="col-xs-6">
+        <div class="col-sm-6 col-md-16">
+            <div class="thumbnail">
         <tr>
-
+            <td align="center"><img src="../uploads/{{$p->image}}" ></td>
             <td>{{ $p->nama }}</td>
             <td>{{ $p->description }}</td>
             <td><b>Rp.</b>{{ $p->price }}</td>
             <td>{{ $p->stock }}</td>
-            <td><img src="../uploads/{{$p->image}}" ></td>
         </tr>
         </div>
+        </div>
         @endforeach
-    </table>
+    
 
     <br/>
     Halaman : {{ $products->currentPage() }} <br/>
